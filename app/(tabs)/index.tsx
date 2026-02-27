@@ -51,6 +51,9 @@ const Home = () => {
              style={{ width: width - 32}}
             >
               <Image source={{ uri: banner.image}} className='w-full h-full' resizeMode='cover'    height={150}  />
+              
+              <View className='inset-0 absolute bg-black/40' />
+              
               <View className='absolute bottom-4 left-4 z-10' >
                 <Text className='text-white text-2xl font-bold' >{banner.title}</Text>
                 <Text className='text-white text-sm font-medium'>{banner.subtitle}</Text>
@@ -58,7 +61,6 @@ const Home = () => {
                   <Text className='text-primary text-xs font-bold'>Get Now</Text>
                 </TouchableOpacity>
               </View>
-              <View className='inset-0 absolute bg-black/40' />
             </View>
           ))
         }
@@ -77,14 +79,14 @@ const Home = () => {
 
         {/* categories */}
         <View className='mb-6'>
-          <View className='flex-row justify-between items-centermb-4'>
+          <View className='flex-row justify-between items-center mb-4'>
              <Text className='text-xl font-bold text-primary'>Categories</Text>
           </View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
          {
             categories.map((cat:any)=>(
             <CategoryItem item={cat} isSelected={false} key={cat.id} 
-              onPress={()=> router.push({pathname:'/shop', params: {category: cat.item ==='all' ? '' : cat.name}} )}
+              onPress={()=> router.push({pathname:'/shop', params: {category: cat.id ==='all' ? '' : cat.name}} )}
             />
             ))
             
@@ -98,7 +100,7 @@ const Home = () => {
           <View className='flex-row justify-between items-center mb-4'>
             <Text className='text-xl font-bold text-primary'>Popular </Text>
             <TouchableOpacity onPress={()=>router.push('/shop')}>
-               <Text className='text-secondary tx-sm'>See All</Text>
+               <Text className='text-secondary text-sm'>See All</Text>
             </TouchableOpacity>
           </View>
           {

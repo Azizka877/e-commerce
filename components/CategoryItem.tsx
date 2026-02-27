@@ -12,7 +12,7 @@ export default function CategoryItem({item, isSelected, onPress}: CategoryItemPr
         ${isSelected ? 'bg-primary' : 'bg-surface'}`}>
         <Ionicons name={item.icon as any}  size={24} color={isSelected ? '#FFF' : COLORS.primary} />
       </View>
-      <Text className={`tx-xs font-medium ${isSelected ? 'text-primary' : 'text-secondary'
+      <Text className={`text-xs font-medium ${isSelected ? 'text-primary' : 'text-secondary'
       }`}>{item.name}</Text>
     </TouchableOpacity>
   )

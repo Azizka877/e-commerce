@@ -9,7 +9,8 @@ module.exports = {
         secondary:"#666666",
         accent: "#FF4C3B",
         background:"#FFFFFF",
-        border:"#EEEEEE"
+        border:"#EEEEEE",
+        surface:"#F7F7F7"
       }
     },
   },
